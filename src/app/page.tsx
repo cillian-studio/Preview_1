@@ -57,9 +57,9 @@ function SectionTitle({
   light?: boolean;
 }) {
   return (
-    <div className="text-center mb-16">
+    <div className="text-center mb-10 md:mb-16">
       <h2
-        className={`font-[family-name:var(--font-heading)] text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${
+        className={`font-[family-name:var(--font-heading)] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${
           light ? "text-white" : "text-primary"
         }`}
       >
@@ -112,7 +112,7 @@ function Navbar() {
             alt="Tischlerei Kout"
             width={200}
             height={44}
-            className="h-10 w-auto"
+            className="h-7 sm:h-10 w-auto"
             priority
           />
         </a>
@@ -237,14 +237,21 @@ function Hero() {
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="#leistungen"
-              className="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-light text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all hover:shadow-xl hover:shadow-accent/30"
+              className="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-light text-white px-6 sm:px-8 py-4 rounded-xl text-base sm:text-lg font-semibold transition-all hover:shadow-xl hover:shadow-accent/30"
             >
               Unsere Leistungen
               <ChevronDown className="w-5 h-5" />
             </a>
             <a
+              href="tel:+4314921309"
+              className="sm:hidden inline-flex items-center justify-center gap-2 bg-white/15 border border-white/30 text-white px-6 py-4 rounded-xl text-base font-medium"
+            >
+              <Phone className="w-5 h-5" />
+              +43 1 492 13 09
+            </a>
+            <a
               href="#kontakt"
-              className="inline-flex items-center justify-center gap-2 border-2 border-white/30 hover:border-white/60 text-white px-8 py-4 rounded-xl text-lg font-medium transition-all hover:bg-white/10"
+              className="hidden sm:inline-flex items-center justify-center gap-2 border-2 border-white/30 hover:border-white/60 text-white px-8 py-4 rounded-xl text-lg font-medium transition-all hover:bg-white/10"
             >
               <Phone className="w-5 h-5" />
               Kontakt
@@ -341,7 +348,7 @@ const services = [
 
 function Services() {
   return (
-    <Section id="leistungen" className="py-24 md:py-32 bg-warm wood-pattern">
+    <Section id="leistungen" className="py-16 md:py-24 lg:py-32 bg-warm wood-pattern">
       <div className="max-w-7xl mx-auto px-6">
         <SectionTitle
           title="Unsere Stärken"
@@ -402,7 +409,7 @@ const aboutItems = [
 
 function About() {
   return (
-    <Section id="ueber-uns" className="py-24 md:py-32 bg-cream">
+    <Section id="ueber-uns" className="py-16 md:py-24 lg:py-32 bg-cream">
       <div className="max-w-7xl mx-auto px-6">
         <SectionTitle
           title="Über uns"
@@ -493,7 +500,7 @@ function Team() {
   ];
 
   return (
-    <Section id="team" className="py-24 md:py-32 bg-warm wood-pattern">
+    <Section id="team" className="py-16 md:py-24 lg:py-32 bg-warm wood-pattern">
       <div className="max-w-7xl mx-auto px-6">
         <SectionTitle title="Unser Team" subtitle="Kompetenz und Erfahrung für Ihr Projekt" />
 
@@ -508,7 +515,7 @@ function Team() {
               className="bg-white rounded-2xl overflow-hidden shadow-sm border border-warm-dark/30 hover:shadow-lg transition-shadow flex flex-col"
             >
               {person.photo ? (
-                <div className="h-96 overflow-hidden">
+                <div className="h-72 sm:h-96 overflow-hidden">
                   <Image
                     src={person.photo}
                     alt={person.name}
@@ -518,7 +525,7 @@ function Team() {
                   />
                 </div>
               ) : (
-                <div className="h-96 bg-gradient-to-br from-primary to-primary-light flex items-center justify-center">
+                <div className="h-72 sm:h-96 bg-gradient-to-br from-primary to-primary-light flex items-center justify-center">
                   <User className="w-24 h-24 text-white/30" />
                 </div>
               )}
@@ -570,7 +577,7 @@ function Contact() {
   };
 
   return (
-    <Section id="kontakt" className="py-24 md:py-32 bg-cream">
+    <Section id="kontakt" className="py-16 md:py-24 lg:py-32 bg-cream">
       <div className="max-w-7xl mx-auto px-6">
         <SectionTitle title="Kontakt" subtitle="Treten Sie mit uns in Kontakt!" />
 
@@ -711,11 +718,11 @@ function Contact() {
                 </h3>
               </div>
               <div className="space-y-2 text-text-light text-sm">
-                <div className="flex justify-between py-2 border-b border-warm-dark/30">
+                <div className="flex flex-col sm:flex-row sm:justify-between py-2 border-b border-warm-dark/30">
                   <span>Montag – Donnerstag</span>
                   <span className="font-medium text-text">7:00–12:00 &amp; 14:00–16:30</span>
                 </div>
-                <div className="flex justify-between py-2 border-b border-warm-dark/30">
+                <div className="flex flex-col sm:flex-row sm:justify-between py-2 border-b border-warm-dark/30">
                   <span>Freitag</span>
                   <span className="font-medium text-text">7:00–12:00</span>
                 </div>
@@ -791,7 +798,7 @@ function Footer() {
               Ihr Wiener Tischler seit 1964. Zertifizierter Fachbetrieb für Sicherheits- und
               Feuerschutztüren, Sonderkonstruktionen und barrierefreies Bauen.
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center gap-4">
               <Image src="/images/ihr-wiener-tischler-white.png" alt="Ihr Wiener Tischler" width={80} height={68} />
               <Image src="/images/ua-badge.png" alt="ÜA Zertifiziert" width={40} height={40} />
               <Image src="/images/ast-siegel.png" alt="AST Siegel" width={40} height={40} />
